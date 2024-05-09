@@ -14,6 +14,8 @@ it('Supplier Enlistment', function() {
   // uncomment for select অবঃ সামরিক সদস্য
   //cy.get('.css-1kfhhld > .MuiBox-root > .MuiFormGroup-root > :nth-child(2) > .MuiButtonBase-root > .PrivateSwitchBase-input').click()
   
+
+  /* Image Upload */
   //cy.get(':nth-child(1) > .fileUploadBox > .fileNameContainer > .addFileBox > .uploadFileInput').trigger('mouseover')
   //cy.get('[data-testid="CameraAltIcon"]').click()
   //cy.get('input[name="supplierImagePath"]').click()
