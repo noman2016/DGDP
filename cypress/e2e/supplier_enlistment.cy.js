@@ -14,9 +14,10 @@ it('Supplier Enlistment', function() {
   // uncomment for select অবঃ সামরিক সদস্য
   //cy.get('.css-1kfhhld > .MuiBox-root > .MuiFormGroup-root > :nth-child(2) > .MuiButtonBase-root > .PrivateSwitchBase-input').click()
   
+  //cy.get(':nth-child(1) > .fileUploadBox > .fileNameContainer > .addFileBox > .uploadFileInput').trigger('mouseover')
   //cy.get('[data-testid="CameraAltIcon"]').click()
   //cy.get('input[name="supplierImagePath"]').click()
   //cy.get('.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-1ylescl').click()
-  cy.get('#simple-tabpanel-bio-data-bn > div > div > form > div > div.MuiBox-root.css-7ysju6 > div > div > div.MuiBox-root.css-tn0uso > div > div.MuiBox-root.css-8atqhb > div > div > div > div > div.fileNameContainer.MuiBox-root.css-8atqhb > label > input').click()
+
 
 })
