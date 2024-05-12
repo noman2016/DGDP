@@ -192,7 +192,7 @@ it('Supplier Enlistment', function() {
   cy.wait(500)
   cy.get('.MuiPickersCalendarHeader-switchViewButton').click()
   cy.wait(500)
-  cy.get(':nth-child(123) > .PrivatePickersYear-yearButton').click()
+  cy.get(':nth-child(122) > .PrivatePickersYear-yearButton').click()
   cy.wait(500)
   cy.get('.MuiMonthPicker-root > :nth-child(7)').click()
   cy.wait(500)
@@ -204,10 +204,18 @@ it('Supplier Enlistment', function() {
   cy.wait(500)
   cy.get('.MuiPickersCalendarHeader-switchViewButton').click()
   cy.wait(500)
-  cy.get(':nth-child(124) > .PrivatePickersYear-yearButton').click()
+  cy.get(':nth-child(3) > .PrivatePickersYear-yearButton').click()
   cy.wait(500)
   cy.get('.MuiMonthPicker-root > :nth-child(7)').click()
   cy.wait(500)
   cy.get('.MuiDayPicker-monthContainer > :nth-child(3) > :nth-child(2)').click()
   cy.wait(500)
+
+  //১৫। আয়কর সংক্রান্ত তথ্যাবলী বাৎসরিক ক্রমানুসারে (০৩ বৎসরের): *
+  //ক। ই টি আই এনঃ *
+  //খ। ট্যাক্স বৎসরঃ *
+  //গ। ব্যক্তিগত কর পরিশোধের পরিমাণঃ *
+  //ঘ। প্রতিষ্ঠানের কর পরিশোধের পরিমাণঃ *
+  //আয়কর সনদ*
+  //আয়কর রশিদ*
 })
