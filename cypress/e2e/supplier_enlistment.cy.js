@@ -77,7 +77,7 @@ it('Supplier Enlistment', function() {
   //ট্রেড লাইসেন্স এর ফটোকপি*
   cy.get(':nth-child(3) > .css-r85p5r > :nth-child(1) > :nth-child(1) > .css-1lilxs6 > :nth-child(2) > .fileUploadBox > .fileNameContainer > .addFileBox')
   .selectFile('cypress\\fixtures\\Trade-License.jpg',{force:true})
-  cy.wait(1000)
+  cy.wait(500)
 
   //মালিকের নাম (ট্রেড লাইসেন্স অনুযায়ী) *
   cy.get('input[name="ownerNameAccordingToTradeLicense"]').type('মোল্লা কাসির উদ্দিন')
@@ -212,10 +212,40 @@ it('Supplier Enlistment', function() {
   cy.wait(500)
 
   //১৫। আয়কর সংক্রান্ত তথ্যাবলী বাৎসরিক ক্রমানুসারে (০৩ বৎসরের): *
+  cy.get(':nth-child(14) > .singleColumnRow > .subFormButtonContainer > .subFormIconContainer > .MuiButtonBase-root').click()
+  cy.wait(500)
+  /*১ম বৎসর*/
   //ক। ই টি আই এনঃ *
+  cy.get('input[name="incomeTaxInformationParams.0.tinNo"]').type('224188377547')
+  cy.wait(500)
   //খ। ট্যাক্স বৎসরঃ *
+  cy.get('#mui-component-select-incomeTaxInformationParams\.0\.taxYear').click()
+  cy.wait(500)
   //গ। ব্যক্তিগত কর পরিশোধের পরিমাণঃ *
   //ঘ। প্রতিষ্ঠানের কর পরিশোধের পরিমাণঃ *
   //আয়কর সনদ*
   //আয়কর রশিদ*
+
+  //১৯। সমিতি, সামাজিক/রাজনৈতিক/ক্লাব/সংস্থার সদস্য হইলেঃ
+  cy.get(':nth-child(18) > .css-11ih3en > .css-1isemmb > .MuiFormGroup-root > .MuiFormControlLabel-root > .MuiButtonBase-root > .PrivateSwitchBase-input').click()
+  //ক। সংস্থা/প্রতিষ্ঠানের নামঃ *
+  cy.get('input[name="associationWithSocialPoliticalClubOrgParams.0.name"]').type('সামাজিক প্রতিষ্ঠান')
+  //খ। রেজিস্ট্রেশন নংঃ
+  cy.get('input[name="associationWithSocialPoliticalClubOrgParams.0.registrationNo"]').type('0125478')
+  //গ। সংস্থাটির কার্যক্রমঃ
+  cy.get(':nth-child(3) > .css-79elbk > .MuiFormControl-root > .MuiInputBase-root').click().type('সংস্থাটির কার্যক্রমঃ')
+  //ঘ। সংস্থাটিতে পদ (যদি থাকে)
+  cy.get('input[name="associationWithSocialPoliticalClubOrgParams.0.designation"]').type('0125478')
+  //ঙ । যোগদানের তারিখঃ
+  cy.get('.css-1840zz > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root > [data-testid="CalendarIcon"]').click()
+  cy.wait(500)
+  cy.get('.MuiPickersCalendarHeader-switchViewButton').click()
+  cy.wait(500)
+  cy.get(':nth-child(111) > .PrivatePickersYear-yearButton').click()
+  cy.wait(500)
+  cy.get('.MuiMonthPicker-root > :nth-child(7)').click()
+  cy.wait(500)
+  cy.get('.MuiDayPicker-monthContainer > :nth-child(3) > :nth-child(5)').click()
+  cy.wait(500)
+  
 })
