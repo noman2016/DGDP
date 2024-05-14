@@ -45,15 +45,15 @@ it('Supplier Enlistment', function() {
   //বিভাগঃ*
   cy.get('#mui-component-select-guardianDivisionId').click()
   cy.wait(500)
-  cy.get('[data-value="0653ffbc-61a1-470f-a83c-6b77f6730b79"]').click()
+  cy.contains('li.MuiMenuItem-root', 'ঢাকা').click();
   //জেলাঃ*
   cy.get('#mui-component-select-guardianDistrictId').click()
   cy.wait(500)
-  cy.get('[data-value="29d12c61-8771-4a4d-9fcd-72969b7f69c0"]').click()
+  cy.contains('li.MuiMenuItem-root', 'ঢাকা').click();
   //থানাঃ*
   cy.get('#mui-component-select-guardianPoliceStationId').click()
   cy.wait(500)
-  cy.get('[data-value="9f3ae5e2-2e8b-4995-95ce-b237d234294c"]').click()
+  cy.contains('li.MuiMenuItem-root', 'সাভার').click();
   //ফোন নম্বরঃ*
   cy.get('input[name="guardianPhoneNo"]').type('01750671332')
   cy.wait(500)
@@ -158,15 +158,15 @@ it('Supplier Enlistment', function() {
   //বিভাগঃ*
   cy.get('#mui-component-select-permanentDivisionId').click()
   cy.wait(500)
-  cy.get('[data-value="0653ffbc-61a1-470f-a83c-6b77f6730b79"]').click()
+  cy.contains('li.MuiMenuItem-root', 'ঢাকা').click();
   //জেলাঃ*
   cy.get('#mui-component-select-permanentDistrictId').click()
   cy.wait(500)
-  cy.get('[data-value="29d12c61-8771-4a4d-9fcd-72969b7f69c0"]').click()
+  cy.contains('li.MuiMenuItem-root', 'ঢাকা').click();
   //থানাঃ*
   cy.get('#mui-component-select-permanentPoliceStationId').click()
   cy.wait(500)
-  cy.get('[data-value="9f3ae5e2-2e8b-4995-95ce-b237d234294c"]').click()
+  cy.contains('li.MuiMenuItem-root', 'সাভার').click();
   //ফোন নম্বরঃ*
   cy.get('input[name="permanentPhoneNo"]').type('01750671332')
   cy.wait(500)
@@ -417,7 +417,7 @@ it('Supplier Enlistment', function() {
   cy.get('[data-value="BANGLADESH_ARMY"]').click()
   //পদমর্যাদাঃ *
   cy.get('#simple-tabpanel-bio-data-bn > div > div > form > div > div.MuiBox-root.css-7ysju6 > div > div > div:nth-child(21) > div.singleColumnRow.MuiBox-root.css-0 > div.MuiBox-root.css-12oq5ku > div.MuiBox-root.css-1wdhvac > div.formRow.MuiBox-root.css-0 > div:nth-child(2) > div.MuiFormControl-root.MuiFormControl-fullWidth.css-1sbbja8 > div > div').click()
-  cy.get('[data-value="278d6438-d56c-4533-9760-a4144e481cca"]').click()
+  cy.contains('li.MuiMenuItem-root', 'ব্রিগেডিয়ার জেনারেল').click();
   //খ। নামঃ *
   cy.get('input[name="relationsServingDefenceInformationParams.0.relativeName"]').type('মনসুর আব্দুল্লাহ')
   //গ। কোর/রেজিমেন্ট/ব্রাঞ্চ ইত্যাদির নামঃ *
@@ -427,13 +427,13 @@ it('Supplier Enlistment', function() {
   //ঙ। বর্তমান ঠিকানাঃ
   //বিভাগঃ*
   cy.get('#simple-tabpanel-bio-data-bn > div > div > form > div > div.MuiBox-root.css-7ysju6 > div > div > div:nth-child(21) > div.singleColumnRow.MuiBox-root.css-0 > div.MuiBox-root.css-12oq5ku > div.MuiBox-root.css-1wdhvac > div.singleColumnRow.MuiBox-root.css-0 > div.MuiBox-root.css-7ysju6 > div:nth-child(2) > div:nth-child(1) > div.MuiFormControl-root.MuiFormControl-fullWidth.css-1sbbja8 > div > div').click()
-  cy.get('[data-value="0653ffbc-61a1-470f-a83c-6b77f6730b79"]').click()
+  cy.contains('li.MuiMenuItem-root', 'ঢাকা').click();
   //জেলাঃ*
   cy.get('#simple-tabpanel-bio-data-bn > div > div > form > div > div.MuiBox-root.css-7ysju6 > div > div > div:nth-child(21) > div.singleColumnRow.MuiBox-root.css-0 > div.MuiBox-root.css-12oq5ku > div.MuiBox-root.css-1wdhvac > div.singleColumnRow.MuiBox-root.css-0 > div.MuiBox-root.css-7ysju6 > div:nth-child(2) > div:nth-child(2) > div.MuiFormControl-root.MuiFormControl-fullWidth.css-1sbbja8 > div > div').click()
-  cy.get('[data-value="29d12c61-8771-4a4d-9fcd-72969b7f69c0"]').click()
+  cy.contains('li.MuiMenuItem-root', 'ঢাকা').click();
   //থানাঃ*
   cy.get('#simple-tabpanel-bio-data-bn > div > div > form > div > div.MuiBox-root.css-7ysju6 > div > div > div:nth-child(21) > div.singleColumnRow.MuiBox-root.css-0 > div.MuiBox-root.css-12oq5ku > div.MuiBox-root.css-1wdhvac > div.singleColumnRow.MuiBox-root.css-0 > div.MuiBox-root.css-7ysju6 > div:nth-child(3) > div.MuiBox-root.css-r85p5r > div.MuiFormControl-root.MuiFormControl-fullWidth.css-1sbbja8 > div > div').click()
-  cy.get('[data-value="9f3ae5e2-2e8b-4995-95ce-b237d234294c"]').click()
+  cy.contains('li.MuiMenuItem-root', 'সাভার').click();
   //বাড়ি/বাসা/হোল্ডিংঃ*
   cy.get('input[name="relationsServingDefenceInformationParams.0.relativePresentAddressLine"]').type('বাড়ি/বাসা/হোল্ডিং')
   //ফোন নম্বরঃ
