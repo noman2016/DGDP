@@ -13,14 +13,12 @@
 
 ## ***Login (page name- dgdp_login.cy.js)
 
-### Two(02) mandatory field
+### One(01) mandatory field
  - //Change User Name * Inside the inverted commas of the type section
- - //Change Password * Inside the inverted commas of the type section 
 
 ## ***Supplier-PreApplication (page name- supplier_enlistment_pre_app.cy.js)
 
-### Two(02) mandatory field
+### One(01) mandatory field
  - //Change User Name * Inside the inverted commas of the type section
- - //Change Password * Inside the inverted commas of the type section 
 
 **NB:** This guide is only used for automation testing purposes
