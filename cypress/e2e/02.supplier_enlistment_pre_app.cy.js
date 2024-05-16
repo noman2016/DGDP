@@ -3,7 +3,7 @@
 it('Supplier Enlistment', function() {
   cy.visit('http://testing.edp.gov.bd/')
   //Change User Name
-  cy.get('input[name="username"]').type('basir')
+  cy.get('input[name="username"]').type('pranto')
   //Change Password
   cy.get('input[name="password"]').type('Sqa@12345')
   cy.wait(500)
@@ -26,7 +26,7 @@ it('Supplier Enlistment', function() {
   cy.wait(2000)
   
   //১। পুরা নাম (বাংলায়): *
-  cy.get('input[name="preApplicantNameBn"]').type('মোল্লা বছির উদ্দিন')
+  cy.get('input[name="preApplicantNameBn"]').type('মোল্লা বছি উদ্দিন')
   cy.wait(500)
   // পিতা
   cy.get('.css-1vq3geb > .MuiBox-root > .MuiFormGroup-root > :nth-child(1) > .MuiButtonBase-root > .PrivateSwitchBase-input').click()
@@ -149,7 +149,7 @@ it('Supplier Enlistment', function() {
   //১০। জাতীয়তাঃ*
   cy.get('#mui-component-select-nationalityTypeId').click()
   cy.wait(500)
-  cy.get('[data-value="add2320c-8435-475b-ab1f-5814efa6c4cb"]').click()
+  cy.contains('li.MuiMenuItem-root', 'বাংলাদেশী').click();
 
   //১১। শিক্ষাগত যোগ্যতাঃ
 
