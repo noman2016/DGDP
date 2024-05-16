@@ -7,14 +7,14 @@ it('Signup DPGDP', function() {
   cy.get('.MuiButton-outlined').click()
   //Change Full Name
   //cy.get('input[name="fullName"]').type('Molla Basir Uddin')
-  cy.get('input[name="fullName"]').type('Pranto')
+  cy.get('input[name="fullName"]').type('siam')
   //Change User Name
   // cy.get('input[name="username"]').type('basir')
-  cy.get('input[name="username"]').type('pranto')
+  cy.get('input[name="username"]').type('siam')
   //Change Email
   cy.get('input[name="email"]').type('simec.sqa01@gmail.com')
   //Change Mobile
-  cy.get('input[name="phone"]').type('01719384368')
+  cy.get('input[name="phone"]').type('01625259111')
   /* Password (change if needed) */
   cy.get('input[name="password"]').type('Sqa@12345')
   cy.get('.MuiButton-contained').click()

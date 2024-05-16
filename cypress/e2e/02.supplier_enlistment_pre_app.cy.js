@@ -3,7 +3,7 @@
 it('Supplier Enlistment', function() {
   cy.visit('http://testing.edp.gov.bd/')
   //Change User Name
-  cy.get('input[name="username"]').type('pranto')
+  cy.get('input[name="username"]').type('siam')
   //Change Password
   cy.get('input[name="password"]').type('Sqa@12345')
   cy.wait(500)
