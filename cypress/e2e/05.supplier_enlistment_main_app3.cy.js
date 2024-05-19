@@ -264,7 +264,60 @@ it('Login DPGDP', function() {
   cy.get('input[name="previousOrCurrentlyEnlistedInDefenseBranchParams.0.remark"]').type('মন্তব্য মন্তব্য মন্তব্য মন্তব্য মন্তব্য মন্তব্য:')
 
   //১৬ । এজেন্সী এগ্রিমেন্ট থাকলে তার বিবরণ:
-  
+  cy.get(':nth-child(18) > .subFormButtonContainer > .subFormIconContainer > .MuiButtonBase-root').click()
+  //বিদেশী কোম্পানি/প্রতিষ্ঠানের নাম:
+  cy.get('input[name="agencyAgreementParams.0.agencyCompanyName"]').type('রয়াল কিং')
+  //কর্মরত কর্মকর্তা/Contact Person এর Whatsapp/Viber/Social Media নম্বর/ঠিকানা:
+  cy.get('input[name="agencyAgreementParams.0.agencyCompanyContractPersonSocialMediaInfo"]').type('যোগাযোগের ব্যক্তি')
+  //বিদেশী কোম্পানি/প্রতিষ্ঠানের পূর্ণাঙ্গ ঠিকানা:
+  cy.get('input[name="agencyAgreementParams.0.agencyCompanyAddress"]').type('আয়ারল্যান্ডের কোম্পানি')
+  //বিদেশী কোম্পানি/প্রতিষ্ঠানের কর্মরত Contact Person 1 এর নাম:
+  cy.get('input[name="agencyAgreementParams.0.agencyAgreementContactPersonParams.0.contactPersonName"]').type('সুটুরেন্ট')
+  //বিদেশী কোম্পানি/প্রতিষ্ঠানের কর্মরত Contact Person 2 এর নাম:
+  cy.get('input[name="agencyAgreementParams.0.agencyAgreementContactPersonParams.1.contactPersonName"]').type('মর্চেন')
+  //বিদেশী কোম্পানি/প্রতিষ্ঠানের কর্মরত Contact Person 1 এর নম্বর:
+  cy.get('input[name="agencyAgreementParams.0.agencyAgreementContactPersonParams.0.contactPersonPhone"]').type('9822847569')
+  //বিদেশী কোম্পানি/প্রতিষ্ঠানের কর্মরত Contact Person 2 এর নম্বর:
+  cy.get('input[name="agencyAgreementParams.0.agencyAgreementContactPersonParams.1.contactPersonPhone"]').type('9833758496')
+  //বিদেশী কোম্পানি/প্রতিষ্ঠানের কর্মরত Contact Person 1 এর ইমেইল:
+  cy.get('input[name="agencyAgreementParams.0.agencyAgreementContactPersonParams.0.contactPersonEmail"]').type('suturent@gmail.com')
+  //বিদেশী কোম্পানি/প্রতিষ্ঠানের কর্মরত Contact Person 2 এর ইমেইল:
+  cy.get('input[name="agencyAgreementParams.0.agencyAgreementContactPersonParams.1.contactPersonEmail"]').type('morchen@gmail.com')
+  //চুক্তিবদ্ধ প্রতিষ্ঠানের ফ্যাক্স নম্বর:
+  cy.get('input[name="agencyAgreementParams.0.contactPersonFax"]').type('N/A')
+  //চুক্তিবদ্ধ প্রতিষ্ঠানের সাথে চুক্তির তারিখ:
+  cy.get(':nth-child(8) > :nth-child(1) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root > [data-testid="CalendarIcon"]').click()
+  cy.wait(200)
+  cy.get('.MuiPickersCalendarHeader-switchViewButton').click()
+  cy.wait(200)
+  cy.get(':nth-child(113) > .PrivatePickersYear-yearButton').click()
+  cy.wait(200)
+  cy.get('.MuiMonthPicker-root > :nth-child(7)').click()
+  cy.wait(200)
+  cy.get('.MuiDayPicker-monthContainer > :nth-child(3) > :nth-child(2)').click()
+  cy.wait(200)
+  //চুক্তির মেয়াদকাল:
+  cy.get(':nth-child(8) > :nth-child(2) > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root > [data-testid="CalendarIcon"]').click()
+  cy.wait(200)
+  cy.get('.MuiPickersCalendarHeader-switchViewButton').click()
+  cy.wait(200)
+  cy.get(':nth-child(120) > .PrivatePickersYear-yearButton').click()
+  cy.wait(200)
+  cy.get('.MuiMonthPicker-root > :nth-child(7)').click()
+  cy.wait(200)
+  cy.get('.MuiDayPicker-monthContainer > :nth-child(3) > :nth-child(2)').click()
+  cy.wait(200)
 
+  //এজেন্সী এগ্রিমেন্ট গ্রুপ ৪ ও ১০ এর অনুকূলে সরবরাহকৃত সরঞ্জামাদির নির্দিষ্টিভাবে বিবরণ:
+  cy.get('input[name="agencyAgreementParams.0.agencyCompanyG410Description"]').type('সরঞ্জাম')
+
+  //প্রতিস্বাক্ষর
+  //প্রতিস্বাক্ষরকারীর নামঃ*
+  cy.get('input[name="refPersonName"]').type('তওহীদ')
+  //পদবীঃ*
+  cy.get('input[name="refPersonRank"]').type('মেজর জেনারেল')
+  //স্বাক্ষরঃ*
+  cy.get('.addFileBox')
+  .selectFile('cypress/fixtures/Signature_of_applicant.png')
 
 })
