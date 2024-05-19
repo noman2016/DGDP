@@ -167,7 +167,7 @@ it('Login DPGDP', function() {
   cy.wait(200)
   cy.contains('li.MuiMenuItem-root', 'সাভার').click();
   //বাড়ি /বাসা /হোল্ডিংঃ
-  cy.get('[name="supplierOwnerSpouseParam.permanentAddress.addressLine"]').type('বাড়ি/বাসা/হোল্ডিং');
+  cy.get('input[name="supplierOwnerSpouseParam.permanentAddress.addressLine"]').type('বাড়ি/বাসা/হোল্ডিং');
 
   //বর্তমান ঠিকানাঃ
   // স্থায়ী ঠিকানার অনুরূপ ?
