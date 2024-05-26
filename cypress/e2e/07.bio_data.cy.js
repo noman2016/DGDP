@@ -4,7 +4,7 @@ it('Login DPGDP', function() {
 
   cy.visit('http://testing.edp.gov.bd/')
   //Change User Name
-  cy.get('input[name="username"]').type('pranto')
+  cy.get('input[name="username"]').type('sabbir001')
   //Change Password
   cy.get('input[name="password"]').type('Sqa@12345')
   cy.wait(200)
@@ -15,7 +15,7 @@ it('Login DPGDP', function() {
   cy.wait(5000)
   cy.get('.MuiTabs-flexContainer > :nth-child(6)').click()
   cy.wait(200)
-  cy.get('.person-list-button-sec > :nth-child(2)').click()
+  cy.get(':nth-child(1) > .person-list-button-sec > :nth-child(2)').click()
 
 
   /* Image Upload */
@@ -140,7 +140,7 @@ it('Login DPGDP', function() {
   //থানাঃ
   //বাড়ি/বাসা/হোল্ডিংঃ
   //১৯।। স্থায়ী ঠিকানাঃ
-  cy.get(':nth-child(15) > .css-17i6dfn > .css-1isemmb > .MuiFormGroup-root > .MuiFormControlLabel-root > .MuiButtonBase-root > .PrivateSwitchBase-input').click()
+  cy.get(':nth-child(16) > .css-17i6dfn > .css-1isemmb > .MuiFormGroup-root > .MuiFormControlLabel-root > .MuiButtonBase-root > .PrivateSwitchBase-input').click()
   cy.wait(200)
   //বর্তমান ঠিকানার অনুরূপ
   //বিভাগঃ
@@ -176,11 +176,11 @@ it('Login DPGDP', function() {
   .selectFile('cypress/fixtures/passport.jpg')
   cy.wait(200)
   //সীলমোহর
-  cy.get(':nth-child(2) > :nth-child(1) > .css-4boj8f > :nth-child(1) > .fileUploadBox > .fileNameContainer > .addFileBox')
-  .selectFile('cypress/fixtures/Seal_of_Applicant.jpg')
+  cy.get(':nth-child(2) > :nth-child(1) > .css-6qdu9h > :nth-child(1) > .fileUploadBox > .fileNameContainer > .addFileBox')
+  .selectFile('cypress/fixtures/seals-and-signatures.jpg')
   cy.wait(200)
   //স্বাক্ষর *
-  cy.get(':nth-child(5) > :nth-child(1) > .css-4boj8f > :nth-child(1) > .fileUploadBox > .fileNameContainer > .addFileBox')
+  cy.get(':nth-child(5) > :nth-child(1) > .css-6qdu9h > :nth-child(1) > .fileUploadBox > .fileNameContainer > .addFileBox')
   .selectFile('cypress/fixtures/Signature_of_applicant.png')
   cy.wait(200)
 })
