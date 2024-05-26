@@ -4,7 +4,7 @@ it('Login DPGDP', function() {
 
   cy.visit('http://testing.edp.gov.bd/')
   //Change User Name
-  cy.get('input[name="username"]').type('sabbir001')
+  cy.get('input[name="username"]').type('akanto008')
   //Change Password
   cy.get('input[name="password"]').type('Sqa@12345')
   cy.wait(200)
