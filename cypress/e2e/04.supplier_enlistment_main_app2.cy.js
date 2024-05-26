@@ -4,7 +4,7 @@ it('Login DPGDP', function() {
 
   cy.visit('http://testing.edp.gov.bd/')
   //Change User Name
-  cy.get('input[name="username"]').type('pranto')
+  cy.get('input[name="username"]').type('akanto008')
   //Change Password
   cy.get('input[name="password"]').type('Sqa@12345')
   cy.wait(200)
@@ -93,6 +93,9 @@ it('Login DPGDP', function() {
   cy.contains('li.MuiMenuItem-root', 'বাংলাদেশী').click();
   */
   //১৬। স্থায়ী ঠিকানাঃ
+  //ফোন নম্বরঃ*
+  cy.get('input[name="permanentAddress.phoneNo"]').type('01750671332')
+  cy.wait(200)
   //১৭। বর্তমান ঠিকানাঃ
   cy.get('.css-bcgk97 > .css-1isemmb > .MuiFormGroup-root > .MuiFormControlLabel-root > .MuiButtonBase-root > .PrivateSwitchBase-input').click()
 
