@@ -105,6 +105,27 @@ it('Login DPGDP', function() {
   cy.wait(200)
 
   //৬। জন্মস্থান:
-
+  cy.get('input[name="birthPlace"]').type('গোপালগঞ্জে')
   //জন্মতারিখঃ
+  cy.get(':nth-child(2) > .css-1ftvhls > .css-0 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputAdornment-root > .MuiButtonBase-root > [data-testid="CalendarIcon"]').click()
+  cy.wait(200)
+  cy.get('.MuiPickersCalendarHeader-switchViewButton').click()
+  cy.wait(200)
+  cy.get(':nth-child(123) > .PrivatePickersYear-yearButton').click()
+  cy.wait(200)
+  cy.get('.MuiMonthPicker-root > :nth-child(7)').click()
+  cy.wait(200)
+  cy.get('.MuiDayPicker-monthContainer > :nth-child(3) > :nth-child(2)').click()
+  cy.wait(200)
+
+  //৭। বাণিজ্য প্রতিষ্ঠানের নাম:
+
+  //৮। 
+  //স্বত্বাধিকারী
+  //cy.get('.css-1ltrdnm > .css-8v90jo > .MuiFormGroup-root > :nth-child(1) > .MuiButtonBase-root > .PrivateSwitchBase-input').click()
+
+  //ব্যবস্থাপনা পরিচালক
+  cy.get('.css-1ltrdnm > .css-8v90jo > .MuiFormGroup-root > :nth-child(2) > .MuiButtonBase-root > .PrivateSwitchBase-input').click()
+
+  //ব্যবস্থাপনা পরিচালকের মোবাইল নম্বর*
 })
