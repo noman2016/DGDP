@@ -3,7 +3,6 @@
 it('Login DPGDP', function() {
 
   cy.visit('http://training.edp.gov.bd/')
-  //cy.visit('http://testing.edp.gov.bd/')
   //Change User Name
   cy.get('input[name="username"]')
   .type('ba.ordtest.ad')
@@ -24,20 +23,20 @@ it('Login DPGDP', function() {
   cy.wait(250)
 
 
-  //আইটেম ইউনিট
-  cy.get('[href="/admin/pre-indent-process/item-unit"] > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root')
+  //আইটেম ব্র্যান্ড
+  cy.get('[href="/admin/pre-indent-process/item-brand"] > .MuiButtonBase-root > .MuiListItemText-root > .MuiTypography-root')
   .click()
-  //আইটেম ইউনিটের নাম (ইংরেজি)*
-  cy.get('#simple-tabpanel-0 > div > div > div.MuiBox-root.css-t52if6 > div > div.MuiBox-root.css-0 > div > form > div > div:nth-child(1) > div:nth-child(1) > div.MuiBox-root.css-79elbk > div')
+  //আইটেমের ব্র্যান্ডের নাম (ইংরেজি)*
+  cy.get('#simple-tabpanel-0 > div > div > div.MuiBox-root.css-t52if6 > div > div.MuiBox-root.css-0 > div > form > div > div:nth-child(1) > div:nth-child(1) > div.MuiBox-root.css-79elbk > div > div')
   .click()
-  .type('test KG')
+  .type('xiaomi')
   cy.wait(250)
 
-  //আইটেম ইউনিটের নাম (বাংলা)*
+  //আইটেমের ব্র্যান্ডের নাম (বাংলা)*
   cy.get('#simple-tabpanel-0 > div > div > div.MuiBox-root.css-t52if6 > div > div.MuiBox-root.css-0 > div > form > div > div:nth-child(1) > div:nth-child(2) > div.MuiBox-root.css-79elbk > div > div')
   .click()
   //.type('টেস্ট কেজি')
-  .type('test KG')
+  .type('শাওমি ')
   cy.wait(250)
 
   //Add Button

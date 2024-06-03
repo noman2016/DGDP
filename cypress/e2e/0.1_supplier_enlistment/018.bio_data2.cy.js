@@ -195,7 +195,8 @@ it('Login DPGDP', function() {
   cy.get(':nth-child(14) > .css-16s43vg > .css-1isemmb > .MuiFormGroup-root > .MuiFormControlLabel-root > .MuiButtonBase-root > .PrivateSwitchBase-input')
   .click()
   //পাসপোর্ট নম্বর:
-  cy.get('input[name="passportNo"]').type('3654218796')
+  cy.get('input[name="passportNo"]')
+  .type('3654218796')
 
   //প্রদানকারী কর্তৃপক্ষ:
   cy.get('input[name="passportProvider"]')
@@ -324,15 +325,18 @@ it('Login DPGDP', function() {
   //বিভাগঃ
   /*cy.get('').click()
   cy.wait(200)
-  cy.contains('li.MuiMenuItem-root', 'ঢাকা').click();
+  cy.contains('li.MuiMenuItem-root', 'ঢাকা')
+  .click();
   //জেলাঃ
   cy.get('').click()
   cy.wait(200)
-  cy.contains('li.MuiMenuItem-root', 'ঢাকা').click();
+  cy.contains('li.MuiMenuItem-root', 'ঢাকা')
+  .click();
   //থানাঃ
   cy.get('').click()
   cy.wait(200)
-  cy.contains('li.MuiMenuItem-root', 'সাভার').click();
+  cy.contains('li.MuiMenuItem-root', 'সাভার')
+  .click();
   //ফোন নম্বর:
   cy.get('input[]').type('')
   //বাড়ি /বাসা /হোল্ডিংঃ
@@ -403,7 +407,8 @@ it('Login DPGDP', function() {
   cy.contains('li.MuiMenuItem-root', 'সাভার')
   .click();
   //বাড়ি /বাসা /হোল্ডিংঃ
-  cy.get('input[name="supplierPersonnelBankAccountParams.0.bankAddressLine"]').type('বাড়ি/বাসা/হোল্ডিং');
+  cy.get('input[name="supplierPersonnelBankAccountParams.0.bankAddressLine"]')
+  .type('বাড়ি/বাসা/হোল্ডিং');
 
   //২৫। সংঘ বা অন্য কোনো সামাজিক /সাহিত্যিক প্রতিষ্ঠানের সদস্য/ সদস্যা থাকিলে তাহার বিবরণ :
   cy.get(':nth-child(27) > .formRow > .css-6ex3lx > .css-1isemmb > .MuiFormGroup-root > .MuiFormControlLabel-root > .MuiButtonBase-root > .PrivateSwitchBase-input')
@@ -598,9 +603,11 @@ it('Login DPGDP', function() {
   cy.contains('li.MuiMenuItem-root', 'সাভার')
   .click();
   //ফোন নম্বর:
-  cy.get('input[name="supplierBiodataFatherInLawParam.phoneNo"]').type('01536659874')
+  cy.get('input[name="supplierBiodataFatherInLawParam.phoneNo"]')
+  .type('01536659874')
   //বাড়ি /বাসা /হোল্ডিংঃ
-  cy.get('input[name="supplierBiodataFatherInLawParam.addressLine"]').type('বাড়ি/বাসা/হোল্ডিং');
+  cy.get('input[name="supplierBiodataFatherInLawParam.addressLine"]')
+  .type('বাড়ি/বাসা/হোল্ডিং');
 
   //আমি এই মর্মে শপথ করিতেছি যে, উপরে যে সমস্ত বিবরণ/তথ্য প্রদান করা হইল তাহা আমার জ্ঞান ও বিশ্বাস মতে সত্য। 
   //অধিকন্তু, ইহাও নিশ্চয়তা প্রদান করিতেছি যে, যদি এই সমস্ত বিবরন/তথ্যের কোনটি মিথ্যা প্রমানিত হয় অথবা কোন তথ্য 
@@ -619,5 +626,4 @@ it('Login DPGDP', function() {
   cy.wait(200)
 
   //পুরা নাম:
-
 })

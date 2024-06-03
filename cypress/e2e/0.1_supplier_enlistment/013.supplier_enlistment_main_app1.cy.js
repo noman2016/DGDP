@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-it('Supplier Enlistment', function() {
+it('Supplier Enlistment, Main Application', function() {
   cy.visit('http://testing.edp.gov.bd/')
   //Change User Name
   cy.get('input[name="username"]')
@@ -494,4 +494,5 @@ it('Supplier Enlistment', function() {
   cy.get(':nth-child(2) > .fileUploadBox > .fileNameContainer > .addFileBox')
   .selectFile('cypress/fixtures/witness_signature.png')
   cy.wait(200)
+  
 })
