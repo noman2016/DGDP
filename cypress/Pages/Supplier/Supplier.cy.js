@@ -8,13 +8,13 @@ class suplier {
     supplierUserforLimited = {
         supplierUserName: () =>   
             cy.get('input[name="username"]')
-            .type('alnoman001_single')
+            .type('alnoman002_limited')
     }
 
     supplierUserforPartnership = {
         supplierUserName: () =>   
             cy.get('input[name="username"]')
-            .type('alnoman001_single')
+            .type('alnoman003_partner')
     }
 
     supplierPass = {

@@ -4,6 +4,12 @@ class IndentUser{
             cy.get('input[name="username"]')
             .type('ba.ordtest.ad')
     }
+    
+    indentforAir = {
+        indentUserName: () =>
+            cy.get('input[name="username"]')
+            .type('baf.supplytest.ad')
+    }
 
     indentPass = {
         indentUserPass: () =>

@@ -1,14 +1,16 @@
 /// <reference types="cypress"/>
 
+import Indent_NameCy from "../../../Pages/Indent/Indent_Name.cy"
+import Indent_UserCy from "../../../Pages/Indent/Indent_User.cy"
+
 it('Indent', function() {
 
   cy.visit('http://training.edp.gov.bd/')
   //Change User Name
-  cy.get('input[name="username"]')
-  .type('ba.ordtest.ad')
+  Indent_UserCy.indentforAir.indentUserName()
   //Change Password
-  cy.get('input[name="password"]')
-  .type('Sqa@12345')
+  Indent_UserCy.indentPass.indentUserPass()
+
   cy.get('.MuiButton-contained')
   .click()
   cy.wait(3000)
@@ -31,14 +33,19 @@ it('Indent', function() {
   //নতুন ইন্ডেন্ট তৈরি করুন
   cy.get('.css-kreh1i > .MuiButtonBase-root')
   .click()
-  cy.wait(200)
+  cy.wait(250)
+
+  //পরবর্তী
+  cy.get('.submitRow > :nth-child(2) > .MuiButtonBase-root')
+  .click()
+  cy.wait(250)
 
   //১| অগ্রাধিকার*
   cy.get('#mui-component-select-indentType')
   .click()
   cy.wait(200)
-  cy.contains('li.MuiMenuItem-root', 'সাধারণ')
-  //cy.contains('li.MuiMenuItem-root', 'জরুরী')
+  cy.contains('li.MuiMenuItem-root', 'Normal')
+  //cy.contains('li.MuiMenuItem-root', 'Emergency')
   .click()
   cy.wait(200) 
 
@@ -46,25 +53,24 @@ it('Indent', function() {
   cy.get('#mui-component-select-securityClassification')
   .click()
   cy.wait(200)
-  cy.contains('li.MuiMenuItem-root', 'বিশেষ গোপনীয়')
-  //cy.contains('li.MuiMenuItem-root', 'অতি গোপনীয়')
-  //cy.contains('li.MuiMenuItem-root', 'গোপনীয়')
-  //cy.contains('li.MuiMenuItem-root', 'অতি গোপনীয়')
+  cy.contains('li.MuiMenuItem-root', 'Top Secret')
+  //cy.contains('li.MuiMenuItem-root', 'Secret')
+  //cy.contains('li.MuiMenuItem-root', 'Confidential')
+  //cy.contains('li.MuiMenuItem-root', 'Restricted')
   .click()
   cy.wait(200) 
 
   //চাহিদাকারীঃ (প্রেরক)*
   //2|চাহিদাপত্র নং*
-  cy.get('input[name="demandLetterNo"]')
-  .type('ইন্ডেন্ট/অটোমেশন/০৭/০৭/২০২৪/০০১-004')
+  Indent_NameCy.createIndentNameAir.IndentNameCreation()
   cy.wait(200)
 
   //৩| অনুমোদনের ধরণঃ*
   cy.get('#mui-component-select-indentApprovalType')
   .click()
   cy.wait(200)
-  cy.contains('li.MuiMenuItem-root', 'এআইপি')
-  //cy.contains('li.MuiMenuItem-root', 'প্রাইওর এডমিন এপ্রুভাল (সিএফএ)')
+  cy.contains('li.MuiMenuItem-root', 'AIP (Approval In Principle)')
+  //cy.contains('li.MuiMenuItem-root', 'CFA (Prior Admin Approval)')
   .click()
   cy.wait(200) 
 

@@ -1,16 +1,17 @@
 /// <reference types="cypress"/>
 
 import Indent_NameCy from "../../../Pages/Indent/Indent_Name.cy"
+import Indent_UserCy from "../../../Pages/Indent/Indent_User.cy"
+import Indent_SelectionCy from "../../../Pages/Indent/Indent_Selection.cy"
 
 it('Indent', function() {
 
   cy.visit('http://training.edp.gov.bd/')
   //Change User Name
-  cy.get('input[name="username"]')
-  .type('ba.ordtest.ad')
+  Indent_UserCy.indentforArmy.indentUserName()
   //Change Password
-  cy.get('input[name="password"]')
-  .type('Sqa@12345')
+  Indent_UserCy.indentPass.indentUserPass()
+
   cy.get('.MuiButton-contained')
   .click()
   cy.wait(3000)
@@ -51,8 +52,7 @@ it('Indent', function() {
   cy.wait(250)*/
 
   //Action
-  cy.get('#simple-tabpanel-indent-list > div > div > div.MuiBox-root.css-0 > div > div:nth-child(1) > div > div > table > tbody > tr:nth-child(2) > td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-sizeMedium.css-1j6ji2h > div > div:nth-child(1)')
-  .click()
+  Indent_SelectionCy.selectIndent.indentSelect()
   cy.wait(2500)
  
   //Edit

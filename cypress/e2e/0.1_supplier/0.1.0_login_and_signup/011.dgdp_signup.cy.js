@@ -19,9 +19,11 @@ it('Signup DPGDP', function() {
   //Change Email
   cy.get('input[name="email"]')
   .type('simec.sqa01@gmail.com')
+
   //Change Mobile
   cy.get('input[name="phone"]')
   .type('01730264304')
+
   /* Password (change if needed) */
   cy.get('input[name="password"]')
   .type('Sqa@12345')
@@ -31,6 +33,7 @@ it('Signup DPGDP', function() {
   .click()
   cy.get('[data-value="NATIONAL_ID"]')
   .click()
+
   /* NATIONAL ID (change if needed) */  
   cy.get('input[name="identityNumber"]')
   .type('0123456789')
@@ -53,6 +56,7 @@ it('Signup DPGDP', function() {
   .click()
   cy.contains('li.MuiMenuItem-root', 'কোন শহরে আপনার জন্ম ?')
   .click()
+  
   /* Secret Question Answer (change if needed) */
   cy.get('input[name="secretQuestionAnswer"]')
   .type('Dhaka')

@@ -8,7 +8,7 @@ it('Item Unit', function() {
   cy.visit('http://training.edp.gov.bd/')
   //cy.visit('http://testing.edp.gov.bd/')
   //Change User Name
-  Indent_UserCy.indentforArmy.indentUserName()
+  Indent_UserCy.indentforAir.indentUserName()
   //Change Password
   Indent_UserCy.indentPass.indentUserPass()
 
@@ -35,16 +35,16 @@ it('Item Unit', function() {
   .click()
 
   //ফরওয়ার্ডিং পত্র নং*
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-1tx28v3 > div > div > div:nth-child(1) > div > div > div.MuiBox-root.css-79elbk > div > div')
+  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-fa580s > div > form > div > div > div > div:nth-child(1) > div > div > div.MuiBox-root.css-79elbk > div')
   .click()
   //.type('00002543')
-  .type('০৬.০০.০০০০.০০৪.২৬.০৫.২৪/ক্রয়/আর্মি/৭০')
+  .type('০৬.০০.০০০০.০০৪.২৬.০৫.২৪/ক্রয়/বিমান/৭০')
   cy.wait(200)
 
   //বিষয়
   cy.get('.jodit-wysiwyg')
   .click()
-  .type('AAAAA')
+  .type('বাংলাদেশ বিমান বাহিনীর জন্য ক্রয়তব্য নীতিগত অনুমোদন প্রদান প্রসঙ্গে')
   cy.wait(200)
 
   //নীতিগত অনুমোদনের ধরন*
@@ -63,9 +63,9 @@ it('Item Unit', function() {
   cy.get('#mui-component-select-currencyType')
   .click()
   cy.wait(200)
-  cy.contains('li.MuiMenuItem-root', 'দেশীয়')
+  //cy.contains('li.MuiMenuItem-root', 'দেশীয়')
   // cy.contains('li.MuiMenuItem-root', 'বৈদেশিক')
-  // cy.contains('li.MuiMenuItem-root', 'দেশীয় এবং বৈদেশিক')
+  cy.contains('li.MuiMenuItem-root', 'দেশীয় এবং বৈদেশিক')
   .click()
   cy.wait(200) 
 
@@ -81,13 +81,13 @@ it('Item Unit', function() {
   cy.get('#mui-component-select-endingFiscalYear')
   .click()
   cy.wait(200)
-  cy.contains('li.MuiMenuItem-root', '২০৩১-২০৩২')
+  cy.contains('li.MuiMenuItem-root', '২০২৩-২০২৪')
   .click()
   cy.wait(200)
 
   //আইটেম গ্রুপ
   cy.get('.css-19w5vep > .css-79elbk > .MuiFormControl-root > .MuiInputBase-root')
-  .type('BBBBBB CCCCC')
+  .type('আইটেম গ্রুপ')
 
   //Non Standardized
   // cy.get('.css-19w5vep > .css-79elbk > .MuiFormControl-root > .MuiInputBase-root')
@@ -107,39 +107,54 @@ it('Item Unit', function() {
   cy.get('#mui-component-select-itemId')
   .click()
   cy.wait(200)
-  cy.contains('li.MuiMenuItem-root', '1.1.0000001 - Sedan Suv Liberty - (STD)')
+  //cy.contains('li.MuiMenuItem-root', '1.1.0000001 - Sedan Suv Liberty - (STD)')
+  cy.get('.MuiMenu-list li')
+  .eq(2) // Change the index to select a different option
   .click()
   cy.wait(200)
 
   //(গ) প্রমিতকৃত সকল মডেলসমূহ
+  cy.get('#mui-component-select-itemModelIds')
+  .click()
+  cy.wait(200)
+
+  // Selecet Item
+  cy.get('.MuiMenu-list li')
+  .eq(1) // Change the index to select a different option
+  .click()
+  cy.wait(200)
+  cy.get('body')
+  .click(0, 0)
+
+
   //(ঘ) প্রাধিকার (সংখ্যা)
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div.MuiBox-root.css-1tx28v3 > div:nth-child(3) > div > div.MuiBox-root.css-79elbk > div > div')
+  cy.get('input[name="authorizeQuantity"]')
   .type('100')
 
   //(ঙ) মজুদ (সংখ্যা)
   //ইউনিট
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div.MuiBox-root.css-79elbk > div > div')
+  cy.get('input[name="unitQuantity"]')
   .type('30')
   cy.wait(200)
 
   //ডিপো
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div.MuiBox-root.css-79elbk > div > div')
+  cy.get('input[name="dipoQuantity"]')
   .type('30')
   cy.wait(200)
 
   //পাইপলাইন
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div.MuiBox-root.css-79elbk > div > div')
+  cy.get('input[name="pipelineQuantity"]')
   .type('40')
   cy.wait(200)
 
   //(চ) ইতোপুর্বে বর্ণিত আইটেমের জন্য নীতিগত অনুমোদন নেয়া হয়ে থাকলে এবং তা প্রক্রিয়াধীন থাকলে তার সংখ্যা
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div.MuiBox-root.css-79elbk > div > div')
+  cy.get('input[name="heldQuantity"]')
   .type('15')
   cy.wait(200)
 
   //(ছ) = {ঘ - (ঙ + চ)} ঘাটতি/অতিরিক্ত (সংখ্যা)
   //(জ) ক্রয়ের জন্য প্রস্তাবিত সংখ্যা*
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(3) > div:nth-child(2) > div > div.MuiBox-root.css-79elbk > div > div')
+  cy.get('input[name="proposedQuantity"]')
   .type('55')
   cy.wait(200)
 
@@ -155,7 +170,7 @@ it('Item Unit', function() {
   cy.wait(200)
 
   //অর্থবছর*
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(4) > div > div:nth-child(3) > div:nth-child(1) > div.MuiFormControl-root.MuiFormControl-fullWidth.css-1sbbja8 > div > div')
+  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-fa580s > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(4) > div > div:nth-child(3) > div:nth-child(1) > div.MuiFormControl-root.MuiFormControl-fullWidth.css-1sbbja8')
   .click()
   cy.wait(200)
   cy.contains('li.MuiMenuItem-root', '২০২২-২০২৩')
@@ -163,7 +178,7 @@ it('Item Unit', function() {
   cy.wait(200) 
 
   //মুদ্রার ধরণ*
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(4) > div > div:nth-child(3) > div:nth-child(2) > div.MuiFormControl-root.MuiFormControl-fullWidth.css-1sbbja8 > div > div')
+  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-fa580s > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(4) > div > div:nth-child(3) > div:nth-child(2) > div.MuiFormControl-root.MuiFormControl-fullWidth.css-1sbbja8')
   .click()
   cy.wait(200)
   cy.contains('li.MuiMenuItem-root', 'দেশীয়')
@@ -177,7 +192,7 @@ it('Item Unit', function() {
   cy.wait(200) 
 
   //মন্তব্য
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(4) > div > div:nth-child(5) > div > div.jodit-react-container > div > div.jodit-workplace')
+  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-fa580s > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(4) > div > div:nth-child(5) > div > div.jodit-react-container > div > div.jodit-workplace')
   .click()
   .type('মন্তব্য মন্তব্য মন্তব্য মন্তব্য মন্তব্য')
   cy.wait(200) 
@@ -211,9 +226,18 @@ it('Item Unit', function() {
   .type('25064879')
   cy.wait(200) 
 
+  //Add
+  cy.get('.css-dqlyof > .submitBtnBox > .MuiButton-contained')
+  .click()
+  cy.wait(200)
+  cy.get('body')
+  .click(0, 0)
+
+
   //(ড) সর্বমোট মূল্য (টাকা) (সম্ভাব্য/প্রাক্কলিত চুক্তি মূল্য)
   //(ঢ) মন্তব্য
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(9) > div > div > div > div.jodit-react-container > div > div.jodit-workplace')
+  cy.get(':nth-child(9) > :nth-child(1) > .css-0 > .css-cyorta > .jodit-react-container > .jodit-container > .jodit-workplace > .jodit-wysiwyg')
+  //cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-fa580s > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(8) > div > div > div > div.jodit-react-container > div > div.jodit-workplace')
   .click()
   .type('মন্তব্য মন্তব্য মন্তব্য মন্তব্য মন্তব্য মন্তব্য')
   cy.wait(200) 
@@ -242,10 +266,34 @@ it('Item Unit', function() {
   cy.wait(200)
 
   //স্থানীয় সরবরাহকারী
+  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-fa580s > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(9) > div > div.formRow.MuiBox-root.css-1qm1lh > div:nth-child(1) > div.MuiFormControl-root.MuiFormControl-fullWidth.css-1sbbja8 > div > div')
+  .click()
+  cy.wait(250)
+
+  // Add
+  cy.get('.MuiMenu-list li')
+  .eq(2) // Change the index to select a different option
+  .click()
+  cy.wait(200)
+
   //প্রিন্সিপাল
+  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-fa580s > div > form > div.MuiBox-root.css-0 > div.MuiBox-root.css-13o7eu2 > div > div > div > div > div:nth-child(9) > div > div.formRow.MuiBox-root.css-1qm1lh > div:nth-child(2) > div.MuiFormControl-root.MuiFormControl-fullWidth.css-1sbbja8 > div > div')
+  .click()
+  cy.wait(250)
+
+  // Add
+  cy.get('.MuiMenu-list li')
+  .eq(2) // Change the index to select a different option
+  .click()
+  cy.wait(200)
+
+  // Add Button
+  cy.get('.css-1nzstx5 > .MuiButton-contained')
+  .click()
+  cy.wait(250)
 
   //নোটস
-  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-0 > div > form > div.MuiBox-root.css-0 > div:nth-child(3) > div > div > div > div > div.jodit-react-container > div > div.jodit-workplace')
+  cy.get('#simple-tabpanel-aip-application > div > div.MuiBox-root.css-c18jar > div > div > div.MuiBox-root.css-fa580s > div > form > div.MuiBox-root.css-0 > div:nth-child(3) > div > div > div > div > div.jodit-react-container > div > div.jodit-workplace')
   .click()
   .type('নোটস নোটস নোটস নোটস নোটস')
   cy.wait(200) 
